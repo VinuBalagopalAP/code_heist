@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
 }
 
 Future<All> fetchRepos() async {
-  final response =
-      await http.get("https://api.github.com/users/VinuBalagopalAP/repos");
+  final response = await http
+      .get(Uri.parse("https://api.github.com/users/VinuBalagopalAP/repos"));
 
   if (response.statusCode == 200) {
     print(response.body);
@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
                   repos.add(
                     Repo(
                       name: snapshot.data!.repos[i].name,
-                      description: snapshot.data!.repos[i].description,
+                      // description: snapshot.data!.repos[i].description,
                       htmlUrl: snapshot.data!.repos[i].htmlUrl,
                       stargazersCount: snapshot.data!.repos[i].stargazersCount,
                     ),
@@ -89,10 +89,10 @@ class _HomeState extends State<Home> {
                                     Text(r.stargazersCount.toString()),
                                   ],
                                 ),
-                                Text(
-                                  r.description,
-                                  style: TextStyle(fontSize: 23.0),
-                                ),
+                                // Text(
+                                //   r.description,
+                                //   style: TextStyle(fontSize: 23.0),
+                                // ),
                                 Text(r.htmlUrl),
                               ],
                             ),

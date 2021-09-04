@@ -2,13 +2,13 @@ class Repo {
   String name;
   String htmlUrl; // hmtl_url
   int stargazersCount; //stargazers_count
-  String description;
+  // String description;
 
   Repo({
     required this.name,
     required this.htmlUrl,
     required this.stargazersCount,
-    required this.description,
+    // required this.description,
   });
 
   factory Repo.fromJson(Map<String, dynamic> json) {
@@ -16,7 +16,7 @@ class Repo {
       name: json['name'],
       htmlUrl: json['html_url'],
       stargazersCount: json['stargazers_count'],
-      description: json['description'],
+      // description: json['description'],
     );
   }
 }
